@@ -1,31 +1,31 @@
 <%- include("partials/header.ejs") %>
 
 <section>
-  <div class="container shadow-sm p-3 my-5 bg-body-tertiary rounded w-50">
-    <form action="/submit" method="post">
-      <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input
-          type="text"
-          id="username"
-          class="form-control"
-          name="username"
-          placeholder="johndoe"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea
-          class="form-control"
-          placeholder="Leave a message here"
-          id="message"
-          name="message"
-        ></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+    <div class="container shadow-sm p-3 my-5 bg-body-tertiary rounded w-50">
+        <form action="/submit" method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    class="form-control"
+                    name="username"
+                    placeholder="johndoe"
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                    class="form-control"
+                    placeholder="Leave a message here"
+                    id="message"
+                    name="message"
+                ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </section>
 
 <%- include("partials/posts.ejs") %> <%- include("partials/footer.ejs") %>

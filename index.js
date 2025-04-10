@@ -7,23 +7,23 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+    res.render("index.ejs");
 });
 
 app.post("/submit", (req, res) => {
     const year = new Date().getFullYear();
     const month = new Date().getMonth();
     const day = new Date().getDate();
-    const date = `${month}-${day}-${year}`
-  const post = {
-    username: req.body.username,
-    date,
-    message: req.body.message,
-  };
+    const date = `${month}-${day}-${year}`;
+    const post = {
+        username: req.body.username,
+        date,
+        message: req.body.message,
+    };
 
-  res.render("index.ejs", post);
+    res.render("index.ejs", post);
 });
 
 app.listen(port, () => {
-  console.log(`Port running on server ${port}.`);
+    console.log(`Port running on server ${port}.`);
 });
