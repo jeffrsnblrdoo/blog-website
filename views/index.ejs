@@ -1,9 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Blog Website</title>
-    </head>
-    <body></body>
-</html>
+<%- include("partials/header.ejs") %>
+
+<div class="container shadow-sm p-3 my-5 bg-body-tertiary rounded">
+    <form action="/submit" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+                type="text"
+                id="username"
+                class="form-control"
+                name="username"
+                value="anonymous"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+                class="form-control"
+                placeholder="Leave a message here"
+                id="message"
+            ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>
