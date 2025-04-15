@@ -1,13 +1,15 @@
-<% if (locals.username && locals.message) { %>
+<% if (locals.posts) { %>
 <section class="d-flex justify-content-center">
+    <% posts.forEach(post => { %>
     <div class="card" style="width: 18rem">
         <div class="card-body">
-            <h5 class="card-title"><%= username %></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= date %></h6>
-            <p class="card-text"><%= message %></p>
-            <a href="#" class="card-link">Delete</a>
+            <h5 class="card-title"><%= post.username %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= post.date %></h6>
+            <p class="card-text"><%= post.message %></p>
+            <!-- <a href="#" class="card-link">Delete</a> -->
         </div>
     </div>
+    <% }) %>
 </section>
 <% } else { %>
 <p class="d-flex justify-content-center">No post yet.</p>
