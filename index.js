@@ -15,13 +15,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-    const post = {
-        username: req.body.username,
+    // { username: 'test', message: 'test' }
+    const newPost = {
+        id: posts.length + 1,
         date,
+        username: req.body.username,
         message: req.body.message,
     };
-
-    res.render("index.ejs", post);
+    posts.push(newPost);
+    res.redirect("/");
 });
 
 app.listen(port, () => {
@@ -31,7 +33,7 @@ app.listen(port, () => {
 let posts = [
     {
         id: 1,
-        date: date,
+        date: "3-15-2025",
         username: "Test",
         message: "Test",
     },
